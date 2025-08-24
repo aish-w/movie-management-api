@@ -1,15 +1,29 @@
-module.exports = {
+export default {
   development: {
     client: "sqlite3",
     connection: {
       filename: "./data/dev.sqlite",
     },
-    useNullAsDefault: true,
     migrations: {
       directory: "./src/db/migrations",
     },
     seeds: {
       directory: "./src/db/seeds",
     },
+    useNullAsDefault: true,
+  },
+
+  test: {
+    client: "sqlite3",
+    connection: {
+      filename: ":memory:",
+    },
+    migrations: {
+      directory: "./src/db/migrations",
+    },
+    seeds: {
+      directory: "./src/db/seeds",
+    },
+    useNullAsDefault: true,
   },
 };
